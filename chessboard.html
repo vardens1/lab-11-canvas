@@ -1,0 +1,58 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Chessboard</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var mastercolor = 0;
+	var ytranslate = 0;
+
+
+
+	var row = prompt("How many columns?");
+	var rowint = parseInt(row,10);
+	var col = prompt("How many rows?");
+	var colint = parseInt(col,10);
+	var evencheck = rowint % 2
+
+	for(a = count; a <= colint - 1; a = a + 1) {
+		var xtranslate = 0;
+		//rows
+		for(i = count; i <= rowint - 1; i = i + 1) {
+			var colorcount = mastercolor % 2;
+				if(colorcount == 0) {
+				context.fillStyle = "#ff0000";
+				}
+				if(colorcount == 1) {
+				context.fillStyle = "#0000ff";
+			}
+
+			context.fillRect(10 + xtranslate, 50 + ytranslate, 50, 50);
+		
+			xtranslate = xtranslate + 55;
+			mastercolor = mastercolor + 1;
+		}
+			if(evencheck == 0) {
+				mastercolor = mastercolor + 1;
+			}
+
+		ytranslate = ytranslate + 55;
+		//mastercolor = mastercolor + 1;
+	}
+}
+
+</script>
+</body>
+</html>
