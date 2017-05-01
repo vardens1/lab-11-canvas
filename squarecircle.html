@@ -1,0 +1,36 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Square and Circle</title>
+</head>
+<body onclick="draw()">
+<canvas id="sketch" width"300" height="300">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+//circle
+//context.beginPath();
+//context.arc(x,y,radius,startangle,endangle,clockwise);
+//context.closePath();
+//context.fill();
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+
+	context.fillStyle = "#000000"
+
+	context.fillRect(50, 50, 30, 30);
+
+	context.beginPath();
+	context.arc(100, 65, 15, 0, 2 * Math.PI, true);
+	context.closePath();
+	context.fill();
+}
+
+</script>
+</body>
+</html>
