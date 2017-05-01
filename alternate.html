@@ -17,22 +17,28 @@ function draw() {
 	var context = sketch.getContext("2d");
 	var count = 0;
 	var xtranslate = 0;
+
 	var num = prompt("How many shapes?");
 	var numint = parseInt(num,10);
 
 	for(i = count; i <= numint - 1; i = i + 1) {
-		context.fillStyle = "#ff0000"
-		context.fillRect(10 + xtranslate, 50, 20, 20);
+		var shape = i % 2;
+		if(shape == 0) {
+			context.fillStyle = "#ff0000"
+			context.fillRect(10 + xtranslate, 50, 20, 20);
 		
-		xtranslate = xtranslate + 20;
+			xtranslate = xtranslate + 20;
+		}
 
-		context.fillStyle = "#0000ff"
-		context.beginPath();
-		context.arc(30 + xtranslate, 60, 10, 0, 2 * Math.PI, true);
-		context.closePath();
-		context.fill();
+		if(shape == 1) {
+			context.fillStyle = "#0000ff"
+			context.beginPath();
+			context.arc(30 + xtranslate, 60, 10, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
 
-		xtranslate = xtranslate + 40;
+			xtranslate = xtranslate + 40;
+		}
 	}
 }
 
