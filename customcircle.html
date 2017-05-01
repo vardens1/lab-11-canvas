@@ -2,7 +2,7 @@
 
 <html>
 <head>
-		<title>Square and Circle</title>
+		<title>Custom Circle</title>
 </head>
 <body onload="draw()">
 <canvas id="sketch" width"300" height="300">
@@ -20,13 +20,25 @@
 function draw() {
 	var sketch = document.getElementById('sketch');
 	var context = sketch.getContext("2d");
+	var color = prompt("Enter a color");
+	var radius = prompt("Enter a radius");
 
-	context.fillStyle = "#000000"
+	if(color == "red") {
+		color = "#ff0000"
+	}
 
-	context.fillRect(50, 50, 30, 30);
+	if(color == "green") {
+		color = "#00ff00"
+	}
+	
+	if(color == "blue") {
+		color = "#0000ff"
+	}
+
+	context.fillStyle = color
 
 	context.beginPath();
-	context.arc(100, 65, 15, 0, 2 * Math.PI, true);
+	context.arc(150, 150, radius, 0, 2 * Math.PI, true);
 	context.closePath();
 	context.fill();
 }
