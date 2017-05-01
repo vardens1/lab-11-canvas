@@ -21,9 +21,11 @@ function draw() {
 	var sketch = document.getElementById('sketch');
 	var context = sketch.getContext("2d");
 
-	context.fillStyle = "#000000"
+	context.fillStyle = "#ff0000"
 
 	context.fillRect(50, 50, 30, 30);
+
+	context.fillStyle = "#00ff00"
 
 	context.beginPath();
 	context.arc(100, 65, 15, 0, 2 * Math.PI, true);
