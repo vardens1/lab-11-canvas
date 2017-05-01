@@ -2,7 +2,7 @@
 
 <html>
 <head>
-		<title>Square</title>
+		<title>Five</title>
 </head>
 <body onload="draw()">
 <canvas id="sketch" width"300" height="300">
@@ -10,14 +10,19 @@
 <script>
 
 //context.fillRect(x,y,width,height)
+var squarecount = 0
+var xtranslate = 0
 
 function draw() {
 	var sketch = document.getElementById('sketch');
 	var context = sketch.getContext("2d");
-	context.fillStyle = "#000000"
-	context.fillRect(50 + xtranslate, 50, 50, 50);
 
-
+	for(i = squarecount; i <= 4; i = i + 1) {
+		context.fillStyle = "#000000"
+		context.fillRect(10 + xtranslate, 50, 20, 20);
+			xtranslate = xtranslate + 50;
+	}
+}
 </script>
 </body>
 </html>
