@@ -1,0 +1,47 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Hemisphere</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var ytranslate = 0;
+	var colorswitch = 0;
+
+	for(a = count; a < 2; a = a + 1) {
+		colorswitch = a % 2;
+		if (colorswitch == 0) {
+			context.fillStyle = "#005500"
+			context.beginPath();
+			context.arc(150, 120 + ytranslate, 120, 0, 2 * Math.PI/2, true);
+			context.closePath();
+			context.fill();
+			ytranslate = ytranslate + 10;
+
+		}
+
+		if (colorswitch == 1) {
+			context.fillStyle = "#000000"
+			context.beginPath();
+			context.arc(150, 120 + ytranslate, 120, 2 * Math.PI/2, 0, true);
+			context.closePath();
+			context.fill();			
+		}
+
+	}
+}
+
+</script>
+</body>
+</html>

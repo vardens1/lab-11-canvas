@@ -1,0 +1,42 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Illusion</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var ytranslate = 0;
+
+//BORDER
+	context.fillRect(150, 150, 440, 320);
+	context.fillStyle = "#ffffff"
+	context.fillRect(155, 155, 430, 310);
+
+//SQUARE BOARD
+	for(a = count; a < 5; a = a + 1) {
+		var xtranslate = 0;
+		//rows
+		for(i = count; i < 7; i = i + 1) {
+			context.fillStyle = "#000000"
+			context.fillRect(165 + xtranslate, 165 + ytranslate, 50, 50);
+			xtranslate = xtranslate + 60;
+		
+		}
+		ytranslate = ytranslate + 60;
+	}
+}
+
+</script>
+</body>
+</html>

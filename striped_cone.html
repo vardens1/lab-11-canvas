@@ -1,0 +1,46 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Growing Circles</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var ytranslate = 0;
+	var xtranslate = 0;
+	var scale = 0;
+	var colorswitch = 0;
+
+	for(a = count; a < 49; a = a + 1) {
+		colorswitch = a % 2;
+		if (colorswitch == 0) {
+			context.fillStyle = "#777777"
+		}
+
+		if (colorswitch == 1) {
+			context.fillStyle = "#000000"			
+		}
+
+		context.beginPath();
+		context.arc(20 + xtranslate, 65 + ytranslate, 10 + scale, 0, 2 * Math.PI, true);
+		context.closePath();
+		context.fill();
+		xtranslate = xtranslate + 10;
+		ytranslate = ytranslate + 10;
+		scale = scale + 5;
+	}
+}
+
+</script>
+</body>
+</html>

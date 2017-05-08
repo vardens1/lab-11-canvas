@@ -1,0 +1,61 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Checkerboard</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var mastercolor = 0;
+	var ytranslate = 0;
+
+
+
+	//var row = prompt("How many columns?");
+	//var rowint = parseInt(row,10);
+	//var col = prompt("How many rows?");
+	//var colint = parseInt(col,10);
+	var evencheck = mastercolor % 2
+
+	context.fillRect(8, 48, 369, 369);
+
+	for(a = count; a < 8; a = a + 1) {
+
+		var xtranslate = 0;
+		//rows
+		for(i = count; i < 8; i = i + 1) {
+			var colorcount = mastercolor % 2;
+				if(colorcount == 0) {
+				context.fillStyle = "#ffffff";
+				}
+				if(colorcount == 1) {
+				context.fillStyle = "#000000";
+			}
+
+			context.fillRect(10 + xtranslate, 50 + ytranslate, 50, 50);
+		
+			xtranslate = xtranslate + 45;
+			mastercolor = mastercolor + 1;
+		}
+			if(evencheck == 0) {
+				mastercolor = mastercolor + 1;
+			}
+
+		ytranslate = ytranslate + 45;
+	}
+}
+
+</script>
+</body>
+</html>

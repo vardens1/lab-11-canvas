@@ -1,0 +1,40 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Request Row</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="2000" height="2000">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+//circle
+//context.beginPath();
+//context.arc(x,y,radius,startangle,endangle,clockwise);
+//context.closePath();
+//context.fill();
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var xtranslate = 0;
+	var input = prompt("How many cirlces in a row do you want?");
+	var num = parseInt(input, 10)
+
+	for(i = 0; i < num; i = i + 1) {
+		context.fillStyle = "#ff69b4"
+
+		context.beginPath();
+		context.arc(20 + xtranslate, 65, 15, 0, 2 * Math.PI, true);
+		context.closePath();
+		context.fill();
+		xtranslate = xtranslate + 40;
+	}
+}
+
+</script>
+</body>
+</html>

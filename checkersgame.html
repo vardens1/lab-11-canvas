@@ -1,0 +1,103 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Checkers Game</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var mastercolor = 0;
+	var ytranslate = 0;
+	var evencheck = mastercolor % 2
+	var ytranslate2 = 0;
+	var ytranslate3 = 0;
+
+	//BORDER
+	context.fillRect(53, 48, 369, 369);
+//rows
+	for(a = count; a < 8; a = a + 1) {
+		var xtranslate = 0;
+		//columns
+		for(i = count; i < 8; i = i + 1) {
+			var colorcount = mastercolor % 2;
+				if(colorcount == 0) {
+				context.fillStyle = "#ffffff";
+				}
+				if(colorcount == 1) {
+				context.fillStyle = "#000000";
+			}
+			context.fillRect(55 + xtranslate, 50 + ytranslate, 50, 50);
+		
+			xtranslate = xtranslate + 45;
+			mastercolor = mastercolor + 1;
+		}
+			if(evencheck == 0) {
+				mastercolor = mastercolor + 1;
+			}
+
+		ytranslate = ytranslate + 45;
+	}
+
+//TOP PIECES
+	for(b = count; b < 3; b = b + 1){
+		var xtranslate2 = 45;
+		for(d = count; d < 4; d = d + 1) {
+			context.fillStyle = "#0000ff"
+			context.beginPath();
+				if(b == 1) {
+					if(evencheck == 0) {
+						context.arc(33 + xtranslate2, 73 + ytranslate2, 15, 0, 2 * Math.PI, true);
+					}
+				}
+
+				if(b != 1) {
+				context.arc(78 + xtranslate2, 73 + ytranslate2, 15, 0, 2 * Math.PI, true);
+				}
+			context.closePath();
+			context.fill();
+			xtranslate2 = xtranslate2 + 90;
+			mastercolor = mastercolor + 1;
+		}
+
+		ytranslate2 = ytranslate2 + 45;
+	}
+
+
+//BOTTOM PIECES
+	for(e = count; e < 3; e = e + 1){
+		var xtranslate3 = 45;
+		for(f = count; f < 4; f = f + 1) {
+			context.fillStyle = "#00ff00"
+			context.beginPath();
+				if(e == 1) {
+					if(evencheck == 0) {
+						context.arc(78 + xtranslate3, 298 + ytranslate3, 15, 0, 2 * Math.PI, true);
+					}
+				}
+
+				if(e != 1) {
+				context.arc(33 + xtranslate3, 298 + ytranslate3, 15, 0, 2 * Math.PI, true);
+				}
+			context.closePath();
+			context.fill();
+			xtranslate3 = xtranslate3 + 90;
+			mastercolor = mastercolor + 1;
+		}
+
+		ytranslate3 = ytranslate3 + 45;
+	}
+}
+</script>
+</body>
+</html>

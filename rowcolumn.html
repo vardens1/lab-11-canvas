@@ -1,0 +1,38 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Row Column</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="300" height="300">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+//circle
+//context.beginPath();
+//context.arc(x,y,radius,startangle,endangle,clockwise);
+//context.closePath();
+//context.fill();
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var ytranslate = 0;
+
+	for(i = 0; i < 5; i = i + 1) {
+		context.fillStyle = "#aaaaff"
+
+		context.beginPath();
+		context.arc(20, 65 + ytranslate, 15, 0, 2 * Math.PI, true);
+		context.closePath();
+		context.fill();
+		ytranslate = ytranslate + 40;
+	}
+}
+
+</script>
+</body>
+</html>

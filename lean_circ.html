@@ -1,0 +1,36 @@
+<DOCTYPE html>
+
+<html>
+<head>
+		<title>Leaning Circles</title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+</canvas>
+<script>
+
+//context.fillRect(x,y,width,height)
+
+
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	var count = 0;
+	var ytranslate = 0;
+	var xtranslate = 0;
+
+	for(a = count; a < 7; a = a + 1) {
+
+		context.fillStyle = "#ff0000"
+		context.beginPath();
+		context.arc(20 + xtranslate, 65 + ytranslate, 10, 0, 2 * Math.PI, true);
+		context.closePath();
+		context.fill();
+		xtranslate = xtranslate + 10;
+		ytranslate = ytranslate + 19;
+	}
+}
+
+</script>
+</body>
+</html>
